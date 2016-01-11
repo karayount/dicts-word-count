@@ -1,8 +1,8 @@
 
 # counts how many times each word appears (space-separated)
 # prints counts to screen
-reading_file = "test.txt"
-# reading_file = "twain.txt"
+#reading_file = "test.txt"
+reading_file = "twain.txt"
 
 # Initialize dictionary
 def count_words(filename):
@@ -12,7 +12,12 @@ def count_words(filename):
     with open(reading_file) as reading:
         for line in reading:
             word_tokens = line.rstrip().split()
-            for word in word_tokens:
+            # Collect joined words, use a list of other strings loping through
+            for token in word_tokens:
+                #see if token has 2 words, if so break it into two and add or increment in dictionary
+                #else if word came in as word 
+                word = token
+                 #see if has excess punctuation, then clean that off and make a word (make sure don't include plural possessives)
                 if word in word_count:
                     word_count[word] += 1
                 else:
